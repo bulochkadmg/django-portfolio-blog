@@ -6,7 +6,9 @@
     <title>My portfolio</title>
 </head>
 <body>
+    {% load static %}
     <h1>portfolio</h1>
+    <img src="{% static 'portfolio/Screenshot_1.png' %}" alt="Screenshot_1.png">
 {% for project in projects %}
 
 <h2>{{ project.title }}</h2>

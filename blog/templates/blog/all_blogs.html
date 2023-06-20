@@ -10,7 +10,7 @@
 
     {% for project in projects%}
     <h2>
-        <a href="{{ project.url }}">{{ project.title }}</a>
+        <a href="{% url 'blog:detail' project.id %}">{{ project.title }}</a>
     </h2>
     <p>{{ project.date }}</p>
     <p>{{ project.description }}</p>
