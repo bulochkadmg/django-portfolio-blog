@@ -6,14 +6,14 @@
     <title>My blogs</title>
 </head>
 <body>
-    <h1>Blog</h1>
+    <h1>Я написал {{ projects.count}} пост{{ projects.count|pluralize }}</h1>
 
     {% for project in projects%}
     <h2>
         <a href="{% url 'blog:detail' project.id %}">{{ project.title }}</a>
     </h2>
-    <p>{{ project.date }}</p>
-    <p>{{ project.description }}</p>
+    <p>{{ project.date|date:'M d Y' }}</p>
+    <p>{{ project.description|safe|truncatechars:100 }}</p>
     {% endfor %}
 </body>
 </html>
